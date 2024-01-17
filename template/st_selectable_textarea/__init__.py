@@ -1,7 +1,7 @@
 import os
 import streamlit.components.v1 as components
 
-_RELEASE = True
+_RELEASE = False
 
 
 if not _RELEASE:
@@ -42,5 +42,5 @@ if not _RELEASE:
     import streamlit as st
     text_input = st.text_input("Enter a text", value="Streamlit")
 
-    dragged_area = st_selectable_textarea(text=text_input, key="foo")
-    st.write(label="result", value=dragged_area)
+    dragged_area = st_selectable_textarea(value=text_input, key="foo")
+    st.write(dragged_area)

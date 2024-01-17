@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import MyComponent from "./SelectableTextArea"
+import SelectableTextArea from "./SelectableTextArea"
 
 ReactDOM.render(
   <React.StrictMode>
-    <MyComponent />
+    <SelectableTextArea />
   </React.StrictMode>,
   document.getElementById("root")
 )
