@@ -1,3 +1,4 @@
+import streamlit as st
 import os
 import streamlit.components.v1 as components
 
@@ -44,7 +45,7 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def my_component(text, key=None):
+def my_component(text="", key=None):
     """Create a new instance of "my_component".
 
     Parameters
@@ -76,3 +77,11 @@ def my_component(text, key=None):
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.
     return component_value
+
+
+name_input = st.text_input("Enter a name", value="Streamlit")
+
+num_clicks = my_component(text=name_input, key="foo")
+
+
+st.text_area(label="as", value=num_clicks)
