@@ -1,21 +1,23 @@
-# streamlit-custom-component
+# streamlit-selectable-textarea
 
-Streamlit component that allows you to do X
+Streamlit components with selectable text fields
 
 ## Installation instructions
 
 ```sh
-pip install streamlit-custom-component
+pip install streamlit-selectable-textarea
 ```
 
 ## Usage instructions
 
 ```python
 import streamlit as st
+from st_selectable_textarea import st_selectable_textarea
 
-from my_component import my_component
+text_input = st.text_input("Enter a text", value="Streamlit")
 
-value = my_component()
+dragged_area = st_selectable_textarea(value=text_input, key="foo")
 
-st.write(value)
+st.write(label="result", value=dragged_area)
+
 ```

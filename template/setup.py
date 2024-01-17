@@ -6,14 +6,14 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
-    name="streamlit-custom-component",
+    name="streamlit-selectable-textarea",
     version="0.0.1",
-    author="John Smith",
-    author_email="john@example.com",
-    description="Streamlit component that allows you to do X",
+    author="yeom_soohyung",
+    author_email="yeomsoo@tecace.com",
+    description="Streamlit components with selectable text fields",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/Kaping/streamlit-Selectable-Text-Area",
     packages=setuptools.find_packages(),
     include_package_data=True,
     classifiers=[],

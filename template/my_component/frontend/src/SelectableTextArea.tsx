@@ -11,7 +11,7 @@ interface State {
   inputText: string
 }
 
-class TextMouseWrapper extends StreamlitComponentBase<State> {
+class SelectableTextArea extends StreamlitComponentBase<State> {
   public state = {
     isFocused: false,
     selectedText: "",
@@ -75,4 +75,4 @@ class TextMouseWrapper extends StreamlitComponentBase<State> {
 }
 
 
-export default withStreamlitConnection(TextMouseWrapper)
+export default withStreamlitConnection(SelectableTextArea)
