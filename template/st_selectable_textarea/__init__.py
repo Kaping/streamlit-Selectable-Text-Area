@@ -1,7 +1,8 @@
+__version__ = '0.1.5'
 import os
 import streamlit.components.v1 as components
 
-_RELEASE = True
+_RELEASE = False
 
 
 if not _RELEASE:
@@ -16,13 +17,18 @@ else:
         "st_selectable_textarea", path=build_dir)
 
 
-def st_selectable_textarea(value="", key=None):
+def st_selectable_textarea(
+        value="",
+        height="95",
+        key=None):
     """Create a new instance of "st_selectable_textarea".
 
     Parameters
     ----------
     value: str
         The text to display in the component.
+    height: int
+        The height of the textarea.
     key: str or None
         An optional key that uniquely identifies this component. If this is
         None, and the component's arguments are changed, the component will
@@ -34,7 +40,7 @@ def st_selectable_textarea(value="", key=None):
         Returns the value text dragged with the mouse in the textarea.
 
     """
-    component_value = _component_func(value=value, key=key, default=0)
+    component_value = _component_func(value=value, height=height, key=key, default="")
     return component_value
 
 
@@ -42,6 +48,6 @@ if not _RELEASE:
     import streamlit as st
     text_input = st.text_input("Enter a text", value="Streamlit")
 
-    dragged_area = st_selectable_textarea(value=text_input, key="foo")
+    dragged_area = st_selectable_textarea(value=text_input, height="500",key="foo")
     st.text_area(label="RES", value=dragged_area)
     st.text_area(label="RS", value="asdds")

@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="streamlit-selectable-textarea",
-    version="0.1.2",
+    version="0.1.4",
     author="yeom_soohyung",
     author_email="yeomsoo@tecace.com",
     description="Streamlit components with selectable text fields",

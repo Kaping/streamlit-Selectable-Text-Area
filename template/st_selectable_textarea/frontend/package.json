@@ -1,6 +1,6 @@
 {
   "name": "st_selectable_textarea",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "private": true,
   "dependencies": {
     "react": "^16.13.1",
