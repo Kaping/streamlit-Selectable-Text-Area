@@ -2,6 +2,8 @@ import {
   Streamlit,
   StreamlitComponentBase,
   withStreamlitConnection,
+  RenderData,
+
 } from "streamlit-component-lib"
 import React, { ReactNode } from "react"
 
@@ -21,16 +23,20 @@ class SelectableTextArea extends StreamlitComponentBase<State> {
   public componentDidUpdate: any = (
     prevProps: Readonly<any>
   ): void =>{
-    // Check if the value of this.props.args["value"] has changed
     if (prevProps.args["value"] !== this.props.args["value"]) {
       this.setState({ inputText: this.props.args["value"] || "" });
     }
+    Streamlit.setFrameHeight()
   }
-
-  // ... (existing code)
 
   public render = (): ReactNode => {
     const { theme } = this.props;
+
+    Streamlit.setFrameHeight()
+    function onRender(event: Event): void {
+      Streamlit.setFrameHeight()
+    }
+    Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, onRender)
 
     return (
         <textarea
@@ -42,8 +48,9 @@ class SelectableTextArea extends StreamlitComponentBase<State> {
           cols={100}
           rows={3}
           style={{
+            overflow: "visible",
             maxWidth: "100%",
-            // minHeight: "95px",
+            minHeight: "95px",
             backgroundColor: "#f0f2f6",
             borderRadius: "5px",
             padding: "10px",
